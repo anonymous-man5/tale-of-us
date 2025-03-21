@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tale of Us</title>
+  <style>
+    body { margin: 0; font-family: 'Helvetica Neue', sans-serif; background: linear-gradient(135deg, #f8e4ff, #e4f1ff); overflow-x: hidden; }
+    .password-container { height: 100vh; display: flex; justify-content: center; align-items: center; background: #fff; }
+    .password-box { text-align: center; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.1); background: white; }
+    input { padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 200px; }
+    button { margin-top: 10px; padding: 10px 20px; border: none; background: #ff90b3; color: white; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #ff70a1; }
+    .content { display: none; animation: fadeIn 1.5s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    h1, h2 { text-align: center; color: #ff5f8a; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .gallery img { width: 100%; border-radius: 20px; transition: transform 0.3s, filter 0.3s; cursor: pointer; }
+    .gallery img:hover { transform: scale(1.05); filter: brightness(1.1); }
+    p { text-align: center; padding: 0 20px; color: #333; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="password-container" id="password-container">
+    <div class="password-box">
+      <h2>Enter Secret Code</h2>
+      <input type="password" id="passwordInput" placeholder="Secret code here...">
+      <br>
+      <button onclick="checkPassword()">Unlock</button>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>The Tale of Us ❤️</h1>
+    <p>Every moment with you is a story I cherish. Everything about you makes me smile.</p>
+
+    <h2>Our Memories</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Memory+1" alt="Memory 1">
+      <img src="https://via.placeholder.com/300x200?text=Memory+2" alt="Memory 2">
+      <img src="https://via.placeholder.com/300x200?text=Memory+3" alt="Memory 3">
+      <img src="https://via.placeholder.com/300x200?text=Memory+4" alt="Memory 4">
+    </div>
+
+    <h2>Letters to You</h2>
+    <p>Whenever you miss me, open this page and remember — you are my favorite part of life. ❤️</p>
+
+    <h2>Our Song 🎵</h2>
+    <p>Play that song that reminds you of us, close your eyes, and smile… because I’m right there in your heart.</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById('passwordInput').value;
+      if (pass === 'pagalcouple1234') {
+        document.getElementById('password-container').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      } else {
+        alert('Oops! Wrong code. Try again!');
+      }
+    }
+  </script>
+</body>
+</html>
